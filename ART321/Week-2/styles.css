@@ -1,13 +1,17 @@
-h1, h2, h3, h4, h5, p, a, footer, header{
+h1, h2, h3, h4, h5, p, a, footer, header, ul{
 	font-size: 100%;
 	margin: 0;
 	border: 0;
 	padding: 0;
+	color: #E3E3E2 ;
 	font-family: Times;	
+}
+a {
+	color: #FFFFFF;
 }
 
 p{
-	font-size: 1.4em;
+	font-size: 1.3em;
 	
 }
 
@@ -17,12 +21,13 @@ h1 {
 
 h2 {
 	font-size: 3em;
-	border-bottom: 2px solid #000000;
+	border-bottom: 2px solid #E3E3E2;
 	margin-bottom: 20px;
 }
 
 h3 {
-	font-size: 1.30em;
+	font-size: 1.40em;
+	margin-bottom: 8px;
 }
 
 h4 {
@@ -33,12 +38,17 @@ h5 {
 		font-size: 0.8em;
 }
 
+body {
+	background-color: #30302F;
+}
+
+
 #main{
 	width: 30em;
 }
 
 .heroimg {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("banner.jpg");	
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("deadlift.jpg");	
 	height: 100%;
 	background-position: center;
 	background-size: cover;
@@ -67,12 +77,15 @@ h5 {
 	box-shadow: 0 2px 0 0 #E5E5E5;
 	margin: 0 0 2em 0;
 	padding: 3em;
+	background-color: #61615F;
 }
 
 .button {
 	display: block;
 	width: 155px;
-	padding: 0.05em;	
+	padding: 0.10em;
+	padding-left: 0.5em ;	
+	padding-right: 0.5em ;
 	border: 1px solid #FFFFFF;
 	border-radius: 1em;
 	color: #FFFFFF;
@@ -88,17 +101,19 @@ h5 {
 	
 	
 .row {
-	display: flex;
+	display: inline-flex;
 }
 	
 	
 .column {	
 	flex: 50%;
 	padding: 20px;
-	text-align: center;
+	text-align: left;
 }
 	
-
+ul {
+	font-size: 1.3em;
+}
 
 
 
