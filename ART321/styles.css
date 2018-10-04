@@ -131,7 +131,7 @@ h5 {
 @media only screen and (max-width: 768px) {
   .heroimg{
     height: 100%;
-		back: cover;
+		background-size: cover;
   }
 
   .herotxt {
