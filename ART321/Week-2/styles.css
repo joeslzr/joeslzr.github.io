@@ -115,6 +115,14 @@ ul {
 	font-size: 1.3em;
 }
 
+a:hover {
+	color: #3DA4AB;
+
+}
+
+a:active {
+	color: #0E9AA7;
+}
 
 
 
