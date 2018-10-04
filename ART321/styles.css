@@ -97,12 +97,12 @@ h5 {
 	height: 100%;
 	background-position: center;
 	background-size: cover;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;	
 }
-
-
-
 
 
 .herotxt {
@@ -119,15 +119,6 @@ h5 {
 }
 
 
-.button {
-	display: block;
-	width: 155px;
-	padding: 0.05em;	
-	border: 3px solid #F6CD61;
-	color: #F6CD61;
-	font-family: Times;
-	font-size: 1em;
-}
 
 .row {
 	display: inline-flex;
