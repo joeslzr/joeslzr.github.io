@@ -115,13 +115,20 @@ ul {
 	font-size: 1.3em;
 }
 
+a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
 a:hover {
 	color: #3DA4AB;
+	text-decoration: underline;
 
 }
 
 a:active {
 	color: #0E9AA7;
+	text-decoration: underline;
 }
 
 

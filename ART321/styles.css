@@ -21,11 +21,13 @@ a:visited {
 
 a:hover {
 	color: #3DA4AB;
+	text-decoration: underline;
 
 }
 
 a:active {
 	color: #0E9AA7;
+	text-decoration: underline;
 }
 
 
