@@ -92,14 +92,18 @@ h5 {
 		font-size: 0.8em;
 }
 
-.heroimg {
+.heroimg {	
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("banner.jpg");	
 	height: 100%;
 	background-position: center;
-	background-size: contain;
+	background-size: auto;
 	background-repeat: no-repeat;
 	position: relative;	
 }
+
+
+
+
 
 .herotxt {
 	text-align: center;
@@ -125,21 +129,24 @@ h5 {
 	font-size: 1em;
 }
 
-
-@media (max-width: 480px) {
-  #picblock {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("banner.jpg");
-    background-repeat: no-repeat;
-    background-size: contain ;
-  }
+.row {
+	display: inline-flex;
 }
-@media (min-width: 481px) {
-  #picblock {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("banner.jpg");
-    background-repeat: no-repeat;
-    background-size: contain ;
-  }
-} 
+	
+	
+.column {	
+	flex: 50%;
+	padding: 20px;
+	text-align: center;
+	font-size: 1.8em;
+	color: #F6CD61;
+	margin-bottom: -50px;
+}
+
+
+
+
+
 
 
 
