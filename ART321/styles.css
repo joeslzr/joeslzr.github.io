@@ -11,12 +11,12 @@ a {
 }
 
 a:link {
-	color: #F6CD61;
+	color: #fffb96;
 
 }
 
 a:visited {
-	color: #F6CD61;
+	color: #fffb96;
 }
 
 a:hover {
@@ -90,7 +90,7 @@ h5 {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: #FFFFFF;
-	border: 4px solid #FE8A71;
+	border: 4px solid #FF3B94;
 	padding: 60;
 	padding-bottom: 70;
 
@@ -108,7 +108,7 @@ h5 {
 	padding: 10px;
 	text-align: center;
 	font-size: 1.0em;
-	color: #F6CD61;
+	color: #fffb96;
 	margin-bottom: -50px;
 }
 
