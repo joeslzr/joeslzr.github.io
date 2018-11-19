@@ -1,0 +1,12 @@
+Turtle.penUp();
+Turtle.turnLeft(90);
+Turtle.moveForward(150);
+Turtle.turnRight(90);
+Turtle.penDown();
+for (var count2 = 0; count2 < 10; count2++) {
+  for (var count = 0; count < 4; count++) {
+    Turtle.moveForward(100);
+    Turtle.turnRight(90);
+  }
+  Turtle.turnRight(10);
+}
