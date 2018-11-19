@@ -1,13 +1,15 @@
 Turtle.penUp();
-Turtle.moveForward(75);
-Turtle.penDown();
-Turtle.moveBackward(150);
-Turtle.penUp();
-Turtle.moveForward(75);
-Turtle.turnRight(90);
-Turtle.moveForward(75);
-Turtle.penDown();
-Turtle.moveBackward(150);
-
-
+Turtle.moveForward(150);
+Turtle.turnLeft(90);
+Turtle.moveForward(200);
+Turtle.turnRight(180);
+for (var count = 0; count < 5; count++) {
+  Turtle.penDown();
+  Turtle.moveForward(400);
+  Turtle.penUp();
+  Turtle.moveBackward(400);
+  Turtle.turnRight(90);
+  Turtle.moveForward(25);
+  Turtle.turnLeft(90);
+}
 

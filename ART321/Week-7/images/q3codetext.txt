@@ -1,12 +1,60 @@
+var i;
+
 Turtle.penUp();
+Turtle.penWidth(5);
+Turtle.moveForward(150);
 Turtle.turnLeft(90);
 Turtle.moveForward(150);
-Turtle.turnRight(90);
-Turtle.penDown();
-for (var count2 = 0; count2 < 10; count2++) {
+Turtle.turnLeft(90);
+var i_list = ['#000000', '#ffff33', '#33cc00'];
+for (var i_index in i_list) {
+  i = i_list[i_index];
+  Turtle.penDown();
+  Turtle.penColour(i);
   for (var count = 0; count < 4; count++) {
     Turtle.moveForward(100);
-    Turtle.turnRight(90);
+    Turtle.turnLeft(90);
   }
-  Turtle.turnRight(10);
+  Turtle.penUp();
+  Turtle.turnRight(90);
+  Turtle.moveBackward(105);
+  Turtle.turnLeft(90);
+}
+Turtle.penUp();
+Turtle.turnRight(90);
+Turtle.moveForward(315);
+Turtle.turnLeft(90);
+Turtle.moveForward(105);
+var i_list2 = ['#ff0000', '#3366ff', '#6600cc'];
+for (var i_index2 in i_list2) {
+  i = i_list2[i_index2];
+  Turtle.penDown();
+  Turtle.penColour(i);
+  for (var count2 = 0; count2 < 4; count2++) {
+    Turtle.moveForward(100);
+    Turtle.turnLeft(90);
+  }
+  Turtle.penUp();
+  Turtle.turnRight(90);
+  Turtle.moveBackward(105);
+  Turtle.turnLeft(90);
+}
+Turtle.penUp();
+Turtle.turnRight(90);
+Turtle.moveForward(315);
+Turtle.turnLeft(90);
+Turtle.moveForward(105);
+var i_list3 = ['#999999', '#ff6600', '#ff99ff'];
+for (var i_index3 in i_list3) {
+  i = i_list3[i_index3];
+  Turtle.penDown();
+  Turtle.penColour(i);
+  for (var count3 = 0; count3 < 4; count3++) {
+    Turtle.moveForward(100);
+    Turtle.turnLeft(90);
+  }
+  Turtle.penUp();
+  Turtle.turnRight(90);
+  Turtle.moveBackward(105);
+  Turtle.turnLeft(90);
 }
