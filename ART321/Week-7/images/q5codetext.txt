@@ -1,5 +1,4 @@
 var i;
-
 Turtle.penUp();
 Turtle.penWidth(5);
 Turtle.moveForward(150);
