@@ -1,0 +1,94 @@
+
+h1, h2, h3, h4, h5, p, a, footer, header{
+	font-size: 100%;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	font-family: Times;
+	color: #FFFFFF;
+}
+
+
+
+header.major {
+	font-size: 4.05em;
+	padding-bottom: 0;
+	border-bottom: solid 2px #ff71ce;
+	text-align: center;
+}
+
+
+h1, h2, h3, h4, h5 {
+	font-weight: 500;
+}
+
+strong, b {
+		font-weight: 600;
+	}
+
+
+h1 {
+	font-size: 2.5em;
+	border-bottom: solid 2px #01cdfe;
+	margin-bottom:25px;
+}
+
+h2 {
+	font-size: 1.85em;
+}
+
+h3 {
+	font-size: 1.30em;
+}
+
+h4 {
+		font-size: 1.15em;
+}
+
+h5 {
+		font-size: 0.8em;
+}
+
+body
+{
+	background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(./images/banner.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+
+
+
+.row {
+	display: inline-flex;
+	margin-bottom:80px;
+}
+
+
+.column {
+	flex: 50%;
+	padding: 10px;
+	text-align: center;
+	font-size: 1.0em;
+	margin-bottom: -50px;
+}
+
+.container {
+	margin: 0 auto;
+	width: 58em;
+}
+.box {
+	background-color: #000000;
+    background-color: rgba(0,0,0,0.8);
+	border-radius: 6px;
+	box-shadow: 0 2px 0 0 #E5E5E5;
+	margin: 0 0 0 0;
+	padding: 3em;
+}
+
+
+pre {
+	color: "white";
+}
