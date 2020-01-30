@@ -20,42 +20,50 @@ body, html {
 }
 
 
+
 ul {
 
 	list-style-type: none;
 	margin: 0;
-	padding: 0;
+  padding: 0;
+  background-color:#333;
+  display:flex;
+  justify-content: center;
 
 }
 
-li {
-	float: left;
-	
+
+#nav-bar {
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
 
 }
 
-li home {
-	display: block;
+#active{
+  background-color:#da410a;
+}
+
+
+
+li nav {
+  /* float: left; */
+	/* display: inline-block; */
 	text-align: center;
 	padding: 10px 10px;
 	color: whitesmoke;
-	background-color: #333;
-	border: 1px solid #FFFFFF;
-	border-radius: 1em;
-	
+  border: none;
+  overflow: hidden;
+  font-family: 'Amatic SC', cursive;
+  font-size: 2.0em;
 }
 
-li home:hover{
-
-	color: crimson;
-	background-color: aqua;
+li nav:hover{
+	background-color: #a6a08f;
 }
 
 
-
-
-
-/* The hero image */
 .home-banner {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("banner.jpg");
   height: 100%;
@@ -64,6 +72,7 @@ li home:hover{
   background-size: cover;
   position: relative;
   display: flex;
+  z-index: -1;
 
 
 }
@@ -73,9 +82,62 @@ li home:hover{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
   color: white;
   
 }
 
+.nav-chevron:hover:before{
+  opacity: 0.5;
 
+}
+
+.nav-chevron:hover:after{
+  opacity: 0.5;
+
+}
+.nav-chevron {
+  position: relative;
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 6px;
+  margin-top: 160px;
+  height: 5px;
+  width: 150px;
+  background-color: transparent;
+  border: none;
+}
+.nav-chevron:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40%;
+  width: 50%;
+  background: whitesmoke;
+  transform: skew(0deg, 25deg);
+}
+.nav-chevron:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 40%;
+  width: 50%;
+  background: whitesmoke;
+  transform: skew(0deg, -25deg);
+}
+
+
+
+/*
+
+.chevron {
+  position: relative;
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 6px;
+  height: 60px;
+  width: 200px;
+}
+*/
