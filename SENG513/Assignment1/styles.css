@@ -1,10 +1,15 @@
 
+p {
+  color: whitesmoke
+
+}
 
 
 h1 {
   font-size: 9em;
   font-weight: normal;
   font-family: 'Amatic SC', cursive;
+  color: whitesmoke
 }
 
 
@@ -12,6 +17,14 @@ h2{
   font-size: 3em;
   font-weight: normal;
   font-family: 'Amatic SC', cursive;
+  color: whitesmoke
+}
+
+h3{
+  font-size: 4em;
+  font-weight: normal;
+  font-family: 'Amatic SC', cursive;
+  color: whitesmoke
 }
 
 
@@ -38,6 +51,7 @@ ul {
   top: 0;
   overflow: hidden;
   width: 100%;
+  z-index: 99999;
 
 }
 
@@ -47,9 +61,9 @@ ul {
 
 
 
-li nav {
+.nav {
   /* float: left; */
-	/* display: inline-block; */
+	display: inline-block; 
 	text-align: center;
 	padding: 10px 10px;
 	color: whitesmoke;
@@ -57,11 +71,18 @@ li nav {
   overflow: hidden;
   font-family: 'Amatic SC', cursive;
   font-size: 2.0em;
-  z-index: 999;
+  text-decoration: none;
 }
 
-li nav:hover{
-	background-color: #a6a08f;
+
+.nav:visited{
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+
+.nav:hover{
+  background-color: #a6a08f;
 }
 
 
@@ -102,7 +123,7 @@ li nav:hover{
   text-align: center;
   padding: 12px;
   margin-bottom: 6px;
-  margin-top: 160px;
+  margin-top: 300px;
   height: 5px;
   width: 150px;
   background-color: transparent;
@@ -130,6 +151,39 @@ li nav:hover{
 }
 
 
+.container{
+  width:100%;
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(./contentBanner.jpg);
+  background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.content{
+  width: 70%;
+  margin: 0 auto;
+  padding: 30px;
+  background:rgba(0, 0, 0, 0.8);
+  color: whitesmoke;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 10px;
+  width: 25% ;
+  text-align: center;
+  border-bottom: 1px solid whitesmoke;
+  /* border-left: 1px solid whitesmoke; */
+}
+
+.bottom-row{
+  border-bottom: none;
+}
 
 /*
 
