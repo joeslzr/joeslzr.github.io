@@ -1,6 +1,7 @@
 body, html {
   height: 100%;
   scroll-behavior: smooth;
+  
 }
 
 p {
@@ -56,6 +57,7 @@ h4{
   padding: 0;
   background-color:#333;
   display:flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
