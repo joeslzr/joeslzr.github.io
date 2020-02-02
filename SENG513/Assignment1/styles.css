@@ -44,8 +44,6 @@ h4{
   margin-top: -10px;
 }
 
-
-
 #nav-bar {
   position: fixed;
   top: 0;
@@ -65,10 +63,7 @@ h4{
   background-color:#da410a;
 }
 
-
-
 .nav {
-  /* float: left; */
 	display: inline-block; 
 	text-align: center;
 	padding: 10px 10px;
@@ -86,11 +81,9 @@ h4{
   color: whitesmoke;
 }
 
-
 .nav:hover{
   background-color: #a6a08f;
 }
-
 
 .home-banner {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("banner.jpg");
@@ -108,9 +101,9 @@ h4{
 .home-text {
   text-align: center;
   position: absolute;
+  transform: translate(-50%, -40%);
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -40%);
   color: white;
   
 }
@@ -200,18 +193,13 @@ td {
   border-bottom: 1px solid whitesmoke;
 }
 
-
-
 td p{
   text-align: left;
 }
 
-
-
 .bottom-row{
   border-bottom: none;
 }
-
 
 td img{
   max-height:70%; 
