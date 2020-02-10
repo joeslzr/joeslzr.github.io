@@ -34,7 +34,7 @@ h1{
 }
 
 table{
-    width: 400px;
+    width: 500px;
     table-layout: fixed;
     text-align: center;
     position: absolute;
@@ -49,7 +49,7 @@ table{
 td, th{
     text-align: center;
     width: 100px;
-    height: 50px;
+    height: 75px;
 }
 
 
@@ -72,7 +72,7 @@ td, th{
     border: none;
     background-color: #4285f4;
     width: 100%;
-    height: 210px;
+    height: 310px;
     border-radius: 4px;
     font-size: 1.5em;
     margin: none;
@@ -150,7 +150,7 @@ td, th{
         width: 100%;
         height: 100%;
         border-radius: 4px;
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
 
 }
