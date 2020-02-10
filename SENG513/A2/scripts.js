@@ -5,12 +5,10 @@ function append(input){
 
     let displayStr = document.getElementById("display").value
 
-    if(displayStr == 0 && !isNaN(input)){ 
+    if((displayStr == 0 && !isNaN(input)) ||(displayStr == ANS && !isNaN(input))){ 
         document.getElementById("display").value = input;
-    }else if(displayStr == ANS && isNaN(input)){
-        document.getElementById("display").value += input;
-    }else if(displayStr == ANS && !isNaN(input)){
-        document.getElementById("display").value = input;
+    }else if(!isNaN(input) && displayStr.substr(displayStr.length - 3) == "ANS"){
+        document.getElementById("display").value += '×' + input; 
     }else{
         document.getElementById("display").value += input;
     }
