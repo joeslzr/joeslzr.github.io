@@ -65,7 +65,7 @@ td, th{
 @media (max-width: 1000px){
 
     #display{
-        width: 100%;
+        width: 90%;
         height: 100%;
         font-size: 4em;
         border-radius: 4px;
