@@ -5,7 +5,7 @@ function append(input){
 
     let displayStr = document.getElementById("display").value
 
-    if(displayStr == 0 ){ 
+    if(displayStr == 0 && !isNaN(input)){ 
         document.getElementById("display").value = input;
     }else if(displayStr == ANS && isNaN(input)){
         document.getElementById("display").value += input;
@@ -35,11 +35,11 @@ function ans(){
     let displayStr = document.getElementById("display").value
 
     if(displayStr == 0){ 
-        document.getElementById("display").value = "ANS";
-    }else if(isNaN(displayStr.substr(displayStr.length - 1))){
+        document.getElementById("display").value = "ANS"; //if nothing input yet
+    }else if(isNaN(displayStr.substr(displayStr.length - 1))){ //if last char is a symbol
         document.getElementById("display").value += "ANS";
     }else{
-        document.getElementById("display").value += "×ANS";
+        document.getElementById("display").value += "×ANS"; //if last char is a number
     }
 }
 

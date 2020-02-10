@@ -3,48 +3,55 @@
 <head>
     <Title> Assignment 2 </Title>
     <link rel="stylesheet" href="./styles.css">
-<script src="./scripts.js"> </script>
+    <script src="./scripts.js"> </script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet"> 
 </head>
 
+<meta name=viewport content="width=device-width, user-scalable=no"/>
 
 <body>
 
-    <table>
-        <!-- maybe dont bother w the ID? -->
-        <tr> <th colspan = "6"><input type="text" id="display" value="0"></th> </tr>
-        <tr>
-            <td> <input class="num" type="button" value="7" onclick="append(7)"> </td>
-            <td> <input class="num" type="button" value="8" onclick="append(8)"> </td>
-            <td> <input class="num" type="button" value="9" onclick="append(9)"> </td>
-            <td> <input class="symbol" type="button" value="DEL" onclick="del()"> </td>
-            <td> <input class="symbol" type="button" value="AC" onclick="clr()"> </td>
-            <td rowspan="4"> <input id="eql" type="button" value="=" onclick="eql()"> </td> 
-        </tr>
-        
-        <tr>
-            <td> <input class="num" type="button" value="4" onclick="append(4)"> </td>
-            <td> <input class="num" type="button" value="5" onclick="append(5)"> </td>
-            <td> <input class="num" type="button" value="6" onclick="append(6)"> </td>
-            <td> <input class="symbol" type="button" value="×" onclick="append('×')"> </td>
-            <td> <input class="symbol" type="button" value="÷" onclick="append('÷')"> </td>
+    <div id="top-bar">
+        <h1>Calculator</h1>
+    </div>
+
+    <div>
+        <table>
+            <tr> <th colspan = "6"><input type="text" id="display" value="0"></th> </tr>
+            <tr>
+                <td> <input class="num" type="button" value="7" onclick="append(7)"> </td>
+                <td> <input class="num" type="button" value="8" onclick="append(8)"> </td>
+                <td> <input class="num" type="button" value="9" onclick="append(9)"> </td>
+                <td> <input class="symbol" type="button" value="DEL" onclick="del()"> </td>
+                <td> <input class="symbol" type="button" value="AC" onclick="clr()"> </td>
+                <td rowspan="4"> <input id="eql" type="button" value="=" onclick="eql()"> </td> 
+            </tr>
             
-        </tr>
-        <tr>
-            <td> <input class="num" type="button" value="1" onclick="append(1)"> </td>
-            <td> <input class="num" type="button" value="2" onclick="append(2)"> </td>
-            <td> <input class="num" type="button" value="3" onclick="append(3)"> </td>
-            <td> <input class="symbol" type="button" value="+" onclick="append('+')"> </td>
-            <td> <input class="symbol" type="button" value="-" onclick="append('-')"> </td>
-        </tr>
-        <tr>
-            <td> <input class="num" type="button" value="0" onclick="append(0)"> </td>
-            <td> <input class="num" type="button" value="." onclick="append('.')"> </td>
-            <td> <input class="symbol" type="button" value="(" onclick="append('(')"> </td>
-            <td> <input class="symbol" type="button" value=")" onclick="append(')')"> </td> 
-            <td> <input class="symbol" type="button" value="Ans" onclick="ans()"> </td>               
-            
-        </tr>
-    </table>
+            <tr>
+                <td> <input class="num" type="button" value="4" onclick="append(4)"> </td>
+                <td> <input class="num" type="button" value="5" onclick="append(5)"> </td>
+                <td> <input class="num" type="button" value="6" onclick="append(6)"> </td>
+                <td> <input class="symbol" type="button" value="×" onclick="append('×')"> </td>
+                <td> <input class="symbol" type="button" value="÷" onclick="append('÷')"> </td>
+                
+            </tr>
+            <tr>
+                <td> <input class="num" type="button" value="1" onclick="append(1)"> </td>
+                <td> <input class="num" type="button" value="2" onclick="append(2)"> </td>
+                <td> <input class="num" type="button" value="3" onclick="append(3)"> </td>
+                <td> <input class="symbol" type="button" value="+" onclick="append('+')"> </td>
+                <td> <input class="symbol" type="button" value="-" onclick="append('-')"> </td>
+            </tr>
+            <tr>
+                <td> <input class="num" type="button" value="0" onclick="append(0)"> </td>
+                <td> <input class="num" type="button" value="." onclick="append('.')"> </td>
+                <td> <input class="symbol" type="button" value="(" onclick="append('(')"> </td>
+                <td> <input class="symbol" type="button" value=")" onclick="append(')')"> </td> 
+                <td> <input class="symbol" type="button" value="Ans" onclick="ans()"> </td>               
+                
+            </tr>
+        </table>
+    </div>
 
 
 </body>

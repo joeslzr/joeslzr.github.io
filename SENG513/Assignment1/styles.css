@@ -44,7 +44,7 @@ h4{
   margin-top: -10px;
 }
 
-#nav-bar {
+#top-bar {
   position: fixed;
   top: 0;
   overflow: hidden;
@@ -63,7 +63,7 @@ h4{
   background-color:#da410a;
 }
 
-.nav {
+/* .nav {
 	display: inline-block; 
 	text-align: center;
 	padding: 10px 10px;
@@ -73,7 +73,7 @@ h4{
   font-family: 'Amatic SC', cursive;
   font-size: 2.0em;
   text-decoration: none;
-}
+} */
 
 
 .nav:visited{
