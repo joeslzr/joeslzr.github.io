@@ -1,4 +1,6 @@
-
+body {
+    touch-action: manipulation;
+}
 
 #display{
     width: 100%;
