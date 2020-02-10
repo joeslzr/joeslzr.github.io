@@ -3,7 +3,7 @@ var ANS = 0;
 
 function append(input){
 
-    displayStr = document.getElementById("display").value
+    let displayStr = document.getElementById("display").value
 
     if(displayStr == 0 ){ 
         document.getElementById("display").value = input;
@@ -21,7 +21,7 @@ function clr(){
 }
 
 function del(){
-    displayStr = document.getElementById("display").value
+    let displayStr = document.getElementById("display").value
 
     if(displayStr.substr(displayStr.length - 3) == "ANS"){
         document.getElementById("display").value = displayStr.slice(0, -3);
@@ -32,7 +32,7 @@ function del(){
 
 
 function ans(){
-    displayStr = document.getElementById("display").value
+    let displayStr = document.getElementById("display").value
 
     if(displayStr == 0){ 
         document.getElementById("display").value = "ANS";
@@ -46,7 +46,7 @@ function ans(){
 
 function eql(){
 
-    var displayStr = document.getElementById("display").value;
+    let displayStr = document.getElementById("display").value;
 
     displayStr = displayStr.replace(/×/gi, "*");
     displayStr = displayStr.replace(/÷/gi, "/");
