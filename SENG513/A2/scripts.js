@@ -11,7 +11,7 @@ function append(input){
         ||(displayStr == "Syntax Error")){ 
 
         document.getElementById("display").value = input;
-        
+
     }else if(!isNaN(input) && displayStr.substr(displayStr.length - 3) == "ANS"){
         document.getElementById("display").value += '×' + input; 
     }else{
@@ -39,10 +39,11 @@ function del(){
 
 
 function ans(){
+
     let displayStr = document.getElementById("display").value
 
-    if(displayStr == 0){ 
-        document.getElementById("display").value = "ANS"; //if nothing input yet
+    if(displayStr == 0 || displayStr.includes("=")){ 
+        document.getElementById("display").value = "ANS"; //if nothing input yet or theres already a solved expression
     }else if(isNaN(displayStr.substr(displayStr.length - 1))){ //if last char is a symbol
         document.getElementById("display").value += "ANS";
     }else{
