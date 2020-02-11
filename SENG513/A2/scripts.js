@@ -5,16 +5,22 @@ function append(input){
 
     let displayStr = document.getElementById("display").value
 
-    if((displayStr == 0 && !isNaN(input)) || (displayStr == 0 && input == '(')
+    if((displayStr == 0 && !isNaN(input) && displayStr.substr(displayStr.length - 1) != '.') // if blank and inputting a new number overwrite the 0
+        || (displayStr == 0 && input == '(')
         || (displayStr == 0 && input == ')') 
         ||(displayStr.includes('='))
         ||(displayStr == "Syntax Error")){ 
-
+        
+        console.log(1);
+            
+        
         document.getElementById("display").value = input;
 
     }else if(!isNaN(input) && displayStr.substr(displayStr.length - 3) == "ANS"){
         document.getElementById("display").value += '×' + input; 
+        console.log(2);
     }else{
+        console.log(4);
         document.getElementById("display").value += input;
     }
 }
