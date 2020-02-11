@@ -9,7 +9,8 @@ function append(input){
         || (displayStr == 0 && input == '(')
         || (displayStr == 0 && input == ')') 
         ||(displayStr.includes('='))
-        ||(displayStr == "Syntax Error")){ 
+        ||(displayStr == "Syntax Error")
+        ){ 
         
         console.log(1);
             
@@ -19,6 +20,8 @@ function append(input){
     }else if(!isNaN(input) && displayStr.substr(displayStr.length - 3) == "ANS"){
         document.getElementById("display").value += '×' + input; 
         console.log(2);
+    }else if(displayStr.includes('.') && input == '.'){
+        ;
     }else{
         console.log(4);
         document.getElementById("display").value += input;
