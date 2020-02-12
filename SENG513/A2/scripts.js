@@ -4,7 +4,7 @@ function append(input){
 
     let displayStr = document.getElementById("display").value
     
-    if((displayStr == 0 && !isNaN(input) && displayStr.substr(displayStr.length - 1) != '.') // if blank and inputting a new number overwrite the 0
+    if((displayStr == 0 && !isNaN(input)) // if blank and inputting a new number overwrite the 0
         || (displayStr == 0 && input == '(')
         || (displayStr == 0 && input == ')') 
         ||(displayStr.includes('='))
