@@ -1,43 +1,43 @@
 var ANS = 0;
+var complete = false;
 
 function append(input){
 
     let displayStr = document.getElementById("display").value
-    
-    if((displayStr == 0 && !isNaN(input)) // if blank and inputting a new number overwrite the 0
+
+    // cases where we need to refresh/overwrite display
+    if( (displayStr != "0.") &&
+        (displayStr == 0 && !isNaN(input)) 
         || (displayStr == 0 && input == '(')
         || (displayStr == 0 && input == ')') 
-        ||(displayStr.includes('='))
-        ||(displayStr == "Syntax Error")
+        || (displayStr == "Syntax Error")
+        || complete == true
         ){ 
-        
-        console.log(1);
-            
-        
         document.getElementById("display").value = input;
-
-    }else if(!isNaN(input) && displayStr.substr(displayStr.length - 3) == "ANS"){
+        document.getElementById("mini-display").innerHTML = "Ans = " + ANS;
+        complete = false;
+        
+    }else if(!isNaN(input) && displayStr.substr(displayStr.length - 3) == "Ans"){ // Automatically multiply by ANS
         document.getElementById("display").value += '×' + input; 
-        console.log(2);
     }else{
-        console.log(4);
+        //else append to display
         document.getElementById("display").value += input;
     }
 }
 
 function clr(){
     document.getElementById("display").value = "0";
+    document.getElementById("mini-display").innerHTML = "Ans = " + ANS;
 }
 
 function del(){
     let displayStr = document.getElementById("display").value
 
-    if(displayStr.substr(displayStr.length - 3) == "ANS"){
+    if(displayStr.substr(displayStr.length - 3) == "Ans"){  //Del whole ANS string
         document.getElementById("display").value = displayStr.slice(0, -3);
-    }else if(displayStr.includes("Error") || displayStr.length == 1 || displayStr.includes('=')){
+    }else if(displayStr.includes("Error") || displayStr.length == 1 || displayStr.includes('=')){ //Delete Syntax error messages
         clr();  
-    }else if(displayStr == '0'){
-
+    }else if(displayStr == '0'){ //if display is just 0, dont do anything
     }else{
         document.getElementById("display").value = displayStr.slice(0, -1);    
     }
@@ -49,11 +49,11 @@ function ans(){
     let displayStr = document.getElementById("display").value
 
     if(displayStr == 0 || displayStr.includes("=")){ 
-        document.getElementById("display").value = "ANS"; //if nothing input yet or theres already a solved expression
+        document.getElementById("display").value = "Ans"; //if nothing input yet or theres already a solved expression
     }else if(isNaN(displayStr.substr(displayStr.length - 1))){ //if last char is a symbol
-        document.getElementById("display").value += "ANS";
+        document.getElementById("display").value += "Ans";
     }else{
-        document.getElementById("display").value += "×ANS"; //if last char is a number
+        document.getElementById("display").value += "×Ans"; //if last char is a number
     }
 }
 
@@ -67,24 +67,20 @@ function eql(){
         return; 
     }
 
+    let equation = displayStr;
 
+    // replace symbols for eval
     displayStr = displayStr.replace(/×/gi, "*");
     displayStr = displayStr.replace(/÷/gi, "/");
-    displayStr = displayStr.replace("ANS", ANS);
-
-
-
+    displayStr = displayStr.replace("Ans", ANS);
 
     try{
         let result = eval(displayStr);
-
-        console.log(result);
-        if(result== "" || result == undefined){
-            let result = "Syntax Error";
-        }else{
-            ANS = result;
-        }
-        document.getElementById("display").value += '=' + result;
+        ANS = result;
+        
+        document.getElementById("mini-display").innerHTML = equation + '=';
+        document.getElementById("display").value = result;
+        complete = true;
 
     } catch (e) {
         if(e instanceof ReferenceError  || e instanceof SyntaxError){
