@@ -48,8 +48,9 @@ function ans(){
 
     let displayStr = document.getElementById("display").value
 
-    if(displayStr == 0 || displayStr.includes("=")){ 
+    if(displayStr == 0 || complete == true){ 
         document.getElementById("display").value = "Ans"; //if nothing input yet or theres already a solved expression
+        document.getElementById("mini-display").innerHTML = "Ans = " + ANS;
     }else if(isNaN(displayStr.substr(displayStr.length - 1))){ //if last char is a symbol
         document.getElementById("display").value += "Ans";
     }else{
