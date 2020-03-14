@@ -4818,8 +4818,8 @@ a.badge-danger:focus, a.badge-danger.focus {
 }
 
 .badge-light {
-  color: #212529;
-  background-color: #f8f9fa;
+  color: whitesmoke;
+  background-color: rgba(190, 190, 190, 0.5);
 }
 
 a.badge-light:hover, a.badge-light:focus {
@@ -7454,6 +7454,15 @@ button.bg-dark:focus {
   margin-top: 0 !important;
 }
 
+.mt-neg10{
+  margin-top: -10px !important;
+}
+
+.mt-neg40{
+  margin-top: -40px !important;
+}
+
+
 .mr-0,
 .mx-0 {
   margin-right: 0 !important;
@@ -9714,6 +9723,36 @@ header.masthead h1 {
   position: relative;
   display: block;
 }
+
+#portfolio .pre-box-caption{
+  display: flex;
+  /* align-items: left;
+  justify-content: left; */
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* text-align: left; */
+  opacity: 100;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  /* transition: opacity 0.25s ease; */
+}
+
+ .box-caption-text{
+  /* background-color: rgba(190, 190, 190, 0.5); */
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  bottom: 10px;
+  justify-content: left;
+  text-align: left;
+}
+
+
+
 
 #portfolio .container-fluid .portfolio-box .portfolio-box-caption {
   display: flex;
