@@ -9747,8 +9747,8 @@ header.masthead h1 {
   height: 10%;
   position: absolute;
   bottom: 10px;
-  justify-content: left;
-  text-align: left;
+  justify-content: center;
+  text-align: center;
 }
 
 
