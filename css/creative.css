@@ -69,6 +69,12 @@ body {
   background-color: #fff;
 }
 
+.fa-sort-down:hover{
+  color: #b33655 !important;
+}
+
+
+
 [tabindex="-1"]:focus {
   outline: 0 !important;
 }
