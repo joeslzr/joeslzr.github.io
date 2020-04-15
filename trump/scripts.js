@@ -24,7 +24,7 @@ function drawGraph(qCategory){
 
 
     // Draw Lines
-    var lineRep = d3.line()
+    var line = d3.line()
         .x(function(d) { return xScale(d.date); }) // set the x values for line
         .y(function(d) { return yScale((d.rYes+d.dYes+d.iYes)/3); }) // set the y values for line
         .curve(d3.curveLinear) // curve determines how points are interpolated
@@ -68,17 +68,21 @@ function drawGraph(qCategory){
 
         console.log(dataset);
 
+
+
         var svg = d3.select("#graph").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+
 
         // call x axis in group tag
         svg.append("g")
             .attr("class", "x-axis")
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(xScale));
+
 
 
         // call the y axis in group tag
@@ -90,7 +94,7 @@ function drawGraph(qCategory){
         svg.append("path")
             .datum(dataset) // bind data
             .attr("class", "line") // give it a class
-            .attr("d", lineRep);    //call line draw
+            .attr("d", line);    //call line draw
 
 
         // svg.append("path")
@@ -350,4 +354,104 @@ function splitBar(data) {
 	
 	// hide the right zero (so no overlap)
 	svg.select('.axis-right g.tick').style('display', 'none');
+}
+
+function updateLine(qCategory){
+
+	//Get Data again
+	d3.csv("impeachment-polls.csv", function(d){
+		var parseDate = d3.timeParse("%Y-%m-%d");
+		return {
+			rYes: +d["Rep Yes"],
+			dYes: +d["Dem Yes"],
+			iYes: +d["Ind Yes"],
+			rNo: +d["Rep No"],
+			dNo: +d["Dem No"],
+			iNo: +d["Ind No"],
+			date: parseDate(d.End),
+			category: d.Category
+		};
+
+	}).then(function(dataset) { // Do stuff in .then so we dont get promise error
+		// Filter for  question -> remove polls with 0 values
+		var i = dataset.length;
+		while (i--) {
+			if (dataset[i].category != qCategory
+				|| dataset[i].rYes == 0
+				|| dataset[i].dYes == 0
+				|| dataset[i].iYes == 0
+			) {
+				dataset.splice(i, 1);
+			}
+		}
+
+		console.log(dataset);
+
+		var minDate = new Date(2016,12,24),
+			maxDate = new Date(2020,2,2);
+
+		var width = 950;
+		var height = 450;
+
+
+
+		var xScale = d3.scaleTime()
+			.domain([minDate, maxDate])
+			.range([0, width]);
+
+
+		// Set Y
+		var yScale = d3.scaleLinear()
+			.domain([0, 100])
+			.range([height, 0]);
+
+
+		var line = d3.line()
+			.x(function(d) { return xScale(d.date); }) // set the x values for line
+			.y(function(d) { return yScale((d.rYes+d.dYes+d.iYes)/3); }) // set the y values for line
+			.curve(d3.curveLinear) // curve determines how points are interpolated
+
+
+
+
+		var t = d3.transition()
+			.duration(700)
+
+
+
+		// var svg = d3.select("#graph").append("svg")
+
+
+		// Update the path
+		d3.select(".line")
+			.transition(t)
+			.attr("d", line(dataset))
+
+		var us = d3.select("g").selectAll("circle")
+			.data(dataset)
+
+		us.exit().transition(t)
+			.attr("r", 0)
+			.remove();
+
+
+
+		console.log(us);
+
+		us.enter().append("circle")
+			.merge(us)
+			.attr("cx", function (d, i) { return xScale(d.date) })
+			.attr("cy", function (d) { return yScale((d.rYes + d.dYes + d.iYes) /3) })
+			// .attr("class", function(d) { return "dot id" + Math.floor(xScale(d.date)) + "x" + Math.floor(yScale(d.iYes)) })
+			.attr("r", 3)
+			.attr('fill', '#ffffff')
+			.attr('stroke', '#000');
+
+		us.transition(t)
+			.attr("cy", function (d) { return yScale((d.rYes + d.dYes + d.iYes) / 3) })
+
+
+
+	});
+
 }
