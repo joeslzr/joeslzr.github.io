@@ -107,7 +107,7 @@ h2 {
 .lineInd, .isoInd { stroke: #fcfcfc;	fill: #fcfcfc; }
 .lineDem, .isoDem { stroke: dodgerblue;	fill: dodgerblue; }
 
-.line{stroke: green;}
+.line{stroke: green; fill:none;}
 
 .lineRep, .lineDem, .lineInd {
     fill: none;
