@@ -415,7 +415,7 @@ function updateLine(qCategory){
 
 
 		var t = d3.transition()
-			.duration(700)
+			.duration(700);
 
 
 
@@ -440,12 +440,37 @@ function updateLine(qCategory){
 
 		us.enter().append("circle")
 			.merge(us)
+			.transition().duration(700)
 			.attr("cx", function (d, i) { return xScale(d.date) })
 			.attr("cy", function (d) { return yScale((d.rYes + d.dYes + d.iYes) /3) })
-			// .attr("class", function(d) { return "dot id" + Math.floor(xScale(d.date)) + "x" + Math.floor(yScale(d.iYes)) })
+			.attr("class", function(d) { return "dot id" + Math.floor(xScale(d.date)) + "x" + Math.floor(yScale(d.iYes)) })
 			.attr("r", 3)
 			.attr('fill', '#ffffff')
-			.attr('stroke', '#000');
+			.attr('stroke', '#000')
+			.on('mouseover',function(d){
+				var dotid = "id" + Math.floor(xScale(d.date)) + "x" + Math.floor(yScale(d.iYes));
+				var dots = document.getElementsByClassName(dotid);
+				for (var i = 0; i < dots.length; i++) {
+					dots[i].classList.toggle("dot-highlight");
+					dots[i].setAttribute("r", 15);
+				}
+			})
+			.on('mouseout', function(d){
+				var dotid = "id" + Math.floor(xScale(d.date)) + "x" + Math.floor(yScale(d.iYes));
+				var dots = document.getElementsByClassName(dotid);
+				for (var i = 0; i < dots.length; i++) {
+					dots[i].classList.toggle("dot-highlight");
+					dots[i].setAttribute("r", 3);
+				}
+			})
+			.on('click', function(d){
+				var data = [
+					{question: "Rep", no: d.rNo, yes: d.rYes},
+					{question: "Ind", no: d.iNo, yes: d.iYes},
+					{question: "Dem", no: d.dNo, yes: d.dYes},
+				];
+				splitBar(data);
+			});
 
 		us.transition(t)
 			.attr("cy", function (d) { return yScale((d.rYes + d.dYes + d.iYes) / 3) })
