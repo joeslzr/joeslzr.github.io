@@ -20,16 +20,19 @@ h1,h2,h3,h4{
     color: whitesmoke;
 }
 h2 {
-	width: 200px;
 	display: inline-block;
 	margin: 0px;
 	padding: 0px;
-	text-align: left;
 }
 
-/*TODO: Replace all this with d3/svg legend*/
-/**************************/
 
+
+#legend {
+	width: 200px;
+	display: inline-block;
+	text-align: left;
+	margin: 0;
+}
 .repLegend {
     position: relative;
     font-size: 1.2em;
@@ -103,22 +106,22 @@ h2 {
 }
 /**********************************/
 
-.lineRep, .isoRep { stroke: indianred;	fill: indianred; }
-.lineInd, .isoInd { stroke: #fcfcfc;	fill: #fcfcfc; }
-.lineDem, .isoDem { stroke: dodgerblue;	fill: dodgerblue; }
+.lineRep, .isoRep { stroke: red;		fill: black; }
+.lineInd, .isoInd { stroke: #fcfcfc;	fill: black; }
+.lineDem, .isoDem { stroke: dodgerblue;	fill: black; }
 
-.line{stroke: green; fill:none;}
+.line{stroke: green; fill:none; stroke-width: 3;}
 
 .lineRep, .lineDem, .lineInd {
     fill: none;
     stroke-width: 2;
 }
 
-.isoNo { opacity:0.35; }
+.isoNo { opacity: 0.35; }
 
 .isoText {
-	fill: black;
-	stroke: black;
+	fill: whitesmoke;
+	stroke: whitesmoke;
     stroke-width: 1;
 }
 
@@ -184,8 +187,14 @@ h2 {
     background-color: #161616;
 }
 
-svg {
-    background-color: #1a1a1a;
+#graph svg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("bg.jpg");
+    background-size: 100% 100%;
+}
+
+#isotype svg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("bg2.jpg");
+    /*background-size: 100% 100%;*/
 }
 
 .x-axis line, path, text{
@@ -195,5 +204,7 @@ svg {
 .y-axis{
 
 }
+
+
 
 
